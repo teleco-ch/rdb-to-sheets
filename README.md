@@ -44,5 +44,4 @@ FEAT RDST
 ## Consideration
 1. I know little coding and even less python, I've tested it on my Meridian 1 Option 11e only as thats the only system I own.
 1. If you have suggestions on how to improve this feel free to submit those here.
-1. If I made something completely wrong in the script its not my responsibility.
 1. Have fun !
