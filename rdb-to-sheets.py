@@ -159,7 +159,7 @@ with pd.ExcelWriter(output_path) as writer:
     }.items():
         df = pd.DataFrame(data)
         if "TNs" in df.columns:
-            df = df.drop(columns=["TNs"])  # Remove TNs column if present for some reason
+            df = df.drop(columns=["TNs"])  # Remove TNs column if present for some reason doesnt work with MS Excel doe
         df.to_excel(writer, sheet_name=sheet_name, index=False)
 
 print("Processing complete. Output saved to", output_path)
