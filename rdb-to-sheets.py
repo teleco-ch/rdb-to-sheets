@@ -11,7 +11,7 @@ if len(sys.argv) < 2:
 
 # Set input and output file 
 input_file = sys.argv[1]
-output_path = sys.argv[2] if len(sys.argv) > 2 else "RDB.xlsx"  # Default to RDB.xlsx if user of script doesnt define it lmao
+output_path = sys.argv[2] if len(sys.argv) > 2 else "RDB.xlsx"  # Default to RDB.xlsx if user of script doesnt define it
 
 
 with open(input_file, "r") as file:
@@ -85,7 +85,7 @@ def parse_rdb_data(lines):
 
 parsed_entries = parse_rdb_data(lines)
 
-# Categorize them and shit
+# Categorize them and stuff
 def categorize_entries(entries):
     main_entries = []
     multiple_tns_entries = []
@@ -145,7 +145,7 @@ def categorize_entries(entries):
 main_entries, multiple_tns_entries, route_entries, cdp_entries, feature_code_entries, att_ldn_entries, other_entries, unexpected_data, unexpected_sheet_name = categorize_entries(parsed_entries)
 
 
-# Save all the data to excel but dropping the raw unprocessed TNs tab that gets made for some reason I dont know why I hate coding and python
+# Save all the data to excel but dropping the raw unprocessed TNs tab that gets made for some reason I dont know why I dont like coding and python
 with pd.ExcelWriter(output_path) as writer:
     for sheet_name, data in {
         "Main": main_entries,
@@ -159,7 +159,7 @@ with pd.ExcelWriter(output_path) as writer:
     }.items():
         df = pd.DataFrame(data)
         if "TNs" in df.columns:
-            df = df.drop(columns=["TNs"])  # Remove TNs column if present
+            df = df.drop(columns=["TNs"])  # Remove TNs column if present for some reason
         df.to_excel(writer, sheet_name=sheet_name, index=False)
 
 print("Processing complete. Output saved to", output_path)
